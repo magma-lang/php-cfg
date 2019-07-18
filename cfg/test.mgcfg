@@ -1,0 +1,25 @@
+obj
+	prop1: haha
+	prop2: haha
+
+cfg: abc
+crazy: every thing after this is a string
+
+arr -a
+	123
+	321
+	-a: abc, chabis, 321
+	515
+	23123:abc
+	crazy haha
+	true
+	-o
+		prop1: num
+	false
+	null
+
+
+
+objy
+	prop1
+		newProp: abc
