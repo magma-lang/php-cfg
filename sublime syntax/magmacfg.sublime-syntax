@@ -1,0 +1,31 @@
+%YAML 1.2
+---
+name: Magma Config
+file_extensions:
+  - mgcfg
+scope: source.mgcss
+
+# variables:
+#   properties: 'auto'
+
+contexts:
+  main:
+    - include: comments
+    - include: global
+
+  comments:
+    - match: //.*$
+      scope: comment.line.mg
+
+  global:
+    - match: '(?<=\s|^)-?\d*\.?\d*(?=\s|$)'
+      scope: constant.language.number.mg
+
+    - match: 'true|false|null'
+      scope: constant.language.number.mg
+
+    - match: '(?<=\s|^)-[ao](?=\s|:|$)'
+      scope: keyword.value.core-el.mg
+
+    - match: '^\s*[^-\n:]*(?=:\s)'
+      scope: variable.function.property.mg
