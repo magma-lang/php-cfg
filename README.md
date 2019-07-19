@@ -45,7 +45,7 @@ return (object) [
 
 ## Usage
 ```
-require_once( DIR. 'engine.php' );
+require_once( 'engine.php' );
 $engine = new MagmaCfg\Engine( 'tmp/', true ); // debug reconverts every time
 
 $cfg = $engine->go( 'cfg/test.mgcfg' );
