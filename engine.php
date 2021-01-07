@@ -2,7 +2,7 @@
 /*
 @package: A Magma Config Reader for PHP
 @author: Sören Meier <info@s-me.ch>
-@version: 0.1 <2019-07-18>
+@version: 0.2 <2021-07-01>
 @docs: cfg.magma-lang.com/php/docs/
 */
 
@@ -246,8 +246,11 @@ class Engine {
 			$type = $levels[$i]->type;
 			if ( is_null( $name ) )
 				$actData = &$actData[count( $actData ) - 1];
-			else
+			else {
+				if ( is_null($actData) )
+					$actData = (object) [ $name => null ];
 				$actData = &$actData->$name;
+			}
 		}
 
 		if ( is_null( $key ) ) {
